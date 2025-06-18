@@ -1,0 +1,43 @@
+/* This styles the whole page */
+body {
+    background-color: lightcyan;
+    font-family: Arial;
+    padding: 20px;
+    text-align: center;
+}
+
+/* This styles the main title at the top */
+h1 {
+    color: darkred;
+    font-size: 48px;
+    /* Big font size */
+    font-weight: bold;
+    /* Bold text */
+    text-shadow: 2px 2px 4px lightgray;
+    /* Simple shadow */
+}
+
+h2 {
+    color: darkblue;
+    font-weight: bold;
+}
+
+/* This styles each career box */
+.career {
+    background-color: lightyellow;
+    border: 2px solid blue;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 40px 0;
+    /* Adds space above/below and centers the box */
+}
+
+/* This styles the images inside the career boxes */
+.career img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    /* These 2 lines centre the image */
+    display: block;
+    margin: 0 auto;
+}
