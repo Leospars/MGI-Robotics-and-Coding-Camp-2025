@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kids' Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Kids' Calculator</h1>
+
+  <div>
+    <label>Number 1:</label><br>
+    <input type="number" id="num1"><br><br>
+
+    <label>Number 2:</label><br>
+    <input type="number" id="num2"><br><br>
+
+    <div class="buttons">
+      <button id="addBtn">Add</button>
+      <button id="subBtn">Subtract</button>
+      <button id="mulBtn">Multiply</button>
+      <button id="divBtn">Divide</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate(op) {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+        let result = "";
+
+        if (isNaN(n1) || isNaN(n2)) {
+            result = "Please enter valid numbers";
+        } else {
+            switch (op) {
+            case '+': result = n1 + n2; break;
+            case '-': result = n1 - n2; break;
+            case '*': result = n1 * n2; break;
+            case '/': result = n2 === 0 ? "Can't divide by 0" : n1 / n2; break;
+            }
+        }
+
+        document.getElementById("result").textContent = result;
+        }
+
+        // Attach event listeners after the DOM loads
+        window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('addBtn').addEventListener('click', () => calculate('+'));
+        document.getElementById('subBtn').addEventListener('click', () => calculate('-'));
+        document.getElementById('mulBtn').addEventListener('click', () => calculate('*'));
+        document.getElementById('divBtn').addEventListener('click', () => calculate('/'));
+    });
+
+  </script>
+</body>
+
+</html>
