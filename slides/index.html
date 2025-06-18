@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            background-position: center center;
+            background-size: cover;
+            background-image: url('https://www.sandals.com/blog/content/images/2020/01/YS-Falls-Negril-Jamaica.jpg');
+            transition: 0.4s;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        .slider-container {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+                        0 3px 6px rgba(0, 0, 0, 0.23);
+            height: 70vh;
+            width: 70vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            opacity: 0;
+            height: 100vh;
+            width: 100vw;
+            background-position: center center;
+            background-size: cover;
+            position: absolute;
+            top: -15vh;
+            left: -15vw;
+            transition: 0.4s ease;
+            z-index: 1;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .arrow {
+            position: fixed;
+            background-color: transparent;
+            color: #fff;
+            padding: 20px;
+            font-size: 30px;
+            border: 2px solid orange;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .arrow:focus {
+            outline: 0;
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 165, 0, 0.2);
+        }
+
+        .left-arrow {
+            left: calc(15vw - 65px);
+        }
+
+        .right-arrow {
+            right: calc(15vw - 65px);
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slide active" style="background-image: url('https://cdn2.unrealengine.com/fnsp-09-dryerase-2-up-webcarousel-1920x1080-1920x1080-9a17076c1022.jpg?resize=1&w=1920');"></div>
+        <div class="slide" style="background-image: url('https://cdn2.unrealengine.com/fnbr-36-00-tumeric-header-image-1920x1080-2-1920x1080-09b3241a99dd.jpg?resize=1&w=1920');"></div>
+        <div class="slide" style="background-image: url('https://cdn2.unrealengine.com/header-image-super-1820x994-6f027a96f5fc.jpg?resize=1&w=1920');"></div>
+        <div class="slide" style="background-image: url('https://staticg.sportskeeda.com/editor/2023/04/80652-16811995768497-1920.jpg');"></div>
+        <div class="slide" style="background-image: url('https://cdn.kidscreen.com/wp/wp-content/uploads/2024/02/carousel_1-1-1.jpeg');"></div>
+    </div>
+
+    <button class="arrow left-arrow" id="left">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <button class="arrow right-arrow" id="right">
+        <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <script>
+        const body = document.body;
+        const slides = document.querySelectorAll('.slide');
+        const leftBtn = document.getElementById('left');
+        const rightBtn = document.getElementById('right');
+
+        let activeSlide = 0;
+
+        setBgToBody();
+
+        function setBgToBody() {
+            body.style.backgroundImage = slides[activeSlide].style.backgroundImage;
+        }
+
+        function setActiveSlide() {
+            slides.forEach((slide) => slide.classList.remove('active'));
+            slides[activeSlide].classList.add('active');
+        }
+
+        rightBtn.addEventListener('click', () => {
+            activeSlide++;
+
+            if (activeSlide > slides.length - 1) {
+                activeSlide = 0;
+            }
+
+            setBgToBody();
+            setActiveSlide();
+        });
+
+        leftBtn.addEventListener('click', () => {
+            activeSlide--;
+
+            if (activeSlide < 0) {
+                activeSlide = slides.length - 1;
+            }
+
+            setBgToBody();
+            setActiveSlide();
+        });
+
+        setBgToBody();
+    </script>
+</body>
+</html>
