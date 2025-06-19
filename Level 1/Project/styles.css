@@ -22,6 +22,48 @@ h2 {
     font-weight: bold;
 }
 
+/* The introductory paragraphs style */
+.intro {
+    text-align: center;
+}
+
+/* This styles the navigation bar */
+.nav-bar {
+    background-color: darkblue;
+    padding: 15px 0;
+    /* Space above and below the links */
+    text-align: center;
+}
+
+/*  Navigation Links  */
+/* Base style for all navigation links */
+.nav-bar a {
+    color: white;
+    margin: 0 20px;
+     /* Space between each link */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Navigation link base style */
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Highlight the active page link */
+.nav-bar a.active {
+    color: lightblue;
+    border-bottom: 3px solid lightblue;
+    /* Underline the active link */
+    padding-bottom: 5px;
+    /* Pushes the text slightly above the underline */
+}
+
+/* CODING CAREERS PAGE */
 /* This styles each career box */
 .career {
     background-color: lightyellow;
@@ -36,8 +78,19 @@ h2 {
 .career img {
     width: 100%;
     max-width: 400px;
+    /* This adjusts the sizing of the images */
     border-radius: 10px;
     /* These 2 lines centre the image */
     display: block;
     margin: 0 auto;
+}
+
+/* Button to go to next page */
+.button {
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
 }
