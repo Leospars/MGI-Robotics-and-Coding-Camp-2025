@@ -27,7 +27,7 @@ h2 {
     text-align: center;
 }
 
-/* This styles the navigation bar */
+/* NAVIGATION BAR */
 .nav-bar {
     background-color: darkblue;
     padding: 15px 0;
@@ -35,21 +35,11 @@ h2 {
     text-align: center;
 }
 
-/*  Navigation Links  */
 /* Base style for all navigation links */
 .nav-bar a {
     color: white;
     margin: 0 20px;
      /* Space between each link */
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* Navigation link base style */
-.nav-bar a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
     font-weight: bold;
     font-size: 18px;
 }
