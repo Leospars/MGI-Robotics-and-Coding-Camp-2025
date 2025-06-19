@@ -11,22 +11,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <!-- Navigation Pane -->
-    <div style="background-color: #003366; padding: 15px 0; text-align: center;">
-        <a href="careers.html"
-            style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 18px;">Coding
-            Careers</a>
-        <a href="tools.html"
-            style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 18px;">My Coding
-            Tools</a>
-        <a href="index.html"
-            style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 18px;">About Me</a>
+<body class="careers-page">
+
+    <!-- Navigation Bar (used for all pages) -->
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="careers.html" class="active">Coding Careers</a>
+        <a href="tools.html">My Coding Tools</a>
+        <a href="contact.html">Contact</a>
     </div>
 
+    <!-- Page Heading -->
     <h1>CODING CAREERS</h1>
 
-    <div style="text-align: center;">
+    <!-- Intro Text -->
+    <div class="intro">
+        <!-- Using inline CSS to make the font bold -->
         <p><b>Coding is how we tell computers, apps, and games what to do! People who learn to code can build amazing
                 things like websites, video games, and apps.</b></p>
         <p>Let's explore some fun and exciting careers that use <u>coding</u> every day.</p>
@@ -35,6 +35,7 @@
     <!-- First career box -->
     <div class="career">
         <h2><i>1. Web Developer</i></h2> <!-- Using inline CSS for italics -->
+        <!-- Adding a link to an online image -->
         <img src="https://free-vectors.net/_ph/10/737099466.jpg" alt="Web Developer">
         <p>Web developers build websites that people use every day! They write code using HTML, CSS, and JavaScript to
             make web pages look nice, colorful, and easy to use. Web developers make sure everything works properly,
@@ -66,15 +67,8 @@
         <p><b>Example:</b> A math game that helps kids practice adding and subtracting while earning stars!</p>
     </div>
 
-
-    <a href="tools.html" style="
-        background-color: darkblue;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 8px;
-        font-weight: bold;
-        margin-top: 20px;">
-        Go to My Coding Tools
-    </a>
+    <!-- Button to My Coding Tools Page -->
+    <a href="tools.html" class="button">Go to My Coding Tools</a>
+    
 </body>
 </html>
